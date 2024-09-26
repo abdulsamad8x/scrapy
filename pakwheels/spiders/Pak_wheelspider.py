@@ -5,7 +5,7 @@ class ExampleSpider(scrapy.Spider):
     start_urls = ['https://www.pakwheels.com/']
 
     def parse(self, response):
-        title = response.css('h1::text').getall()
+        title = response.css('div.col-md-6.line.or li::text').getall()
         
         yield {
             'title': title,
